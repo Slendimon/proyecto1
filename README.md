@@ -7,4 +7,4 @@ All database tables are on migrates files.
 
 Have no auth method yet.
 
-
+database name was fares
