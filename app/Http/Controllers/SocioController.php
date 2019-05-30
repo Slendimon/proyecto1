@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Socio;
 use Illuminate\Http\Request;
 
 class SocioController extends Controller
@@ -13,7 +13,9 @@ class SocioController extends Controller
      */
     public function index()
     {
-        //
+        $socios = Socio::all();
+
+        return view('socios.index',compact('socios'));
     }
 
     /**
@@ -23,7 +25,7 @@ class SocioController extends Controller
      */
     public function create()
     {
-        //
+        return view('socios.create');
     }
 
     /**
@@ -34,7 +36,23 @@ class SocioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'apellido_p'=>'required',
+            'apellido_m'=>'required',
+            'nombre'=>'required',
+            'cargo'=>'required',
+            'habilitado'=>'required'
+        ]);
+        $socio = new Socio ([
+            'apellido_p'=> $request->get('apellido_p'),
+            'apellido_m'=> $request->get('apellido_m'),
+            'nombre'=> $request->get('nombre'),
+            'cargo'=> $request->get('cargo'),
+            'habilitado'=> $request->get('habilitado'),
+            'descripcion'=> $request->get('descripcion'),
+        ]);
+        $socio->save();
+        return redirect('/socios')->with('success','El socio ha sido agregado');
     }
 
     /**
