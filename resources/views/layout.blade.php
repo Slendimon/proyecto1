@@ -28,9 +28,9 @@
     </div>
   </div>
     
-    <div class="container">
-        @yield('content')  
-    </div>
+  <div class="container">
+      @yield('content')  
+  </div>
 </div>
   <script src="{{ asset('js/app.js') }}" type="text/js"></script>
 </body>

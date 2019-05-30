@@ -15,6 +15,6 @@ class Socio extends Model
         'descripcion'
     ];
     public function stands (){
-        return $this->belongsToMany(Stand::class);
+        return $this->belongsToMany(Stand::class)->withPivot('fecha_inscripcion','observacion');
     }
 }
