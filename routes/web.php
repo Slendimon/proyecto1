@@ -15,3 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('socios','SocioController');
+Route::resource('fares','FareController');
+Route::resource('stands','StandController');

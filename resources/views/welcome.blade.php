@@ -81,18 +81,25 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    PROYECTO 1 <small>TEST</small>
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ route('socios.index')}} ">SOCIOS</a>
+                    <a href="" 
+                        data-toggle="modal" 
+                        data-target="#favoritesModal">TARIFAS</a>
+                    <a href="">STANDS</a>
+                    
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @yield('tarifa')
+            </div>
+            <div class="col-md-6">
+                @yield('stand')
             </div>
         </div>
     </body>

@@ -74,7 +74,9 @@ class SocioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $socio = Socio::find($id);
+
+        return view('socios.edit', compact('socio'));
     }
 
     /**
@@ -86,7 +88,25 @@ class SocioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+
+            'apellido_p'=>'required',
+            'apellido_m'=>'required',
+            'nombre'=>'required',
+            'cargo'=>'required',
+            'habilitado'=>'required'
+        ]);
+
+        $socio = Socio::find($id);
+        $socio->apellido_p = $request->get('apellido_p');
+        $socio->apellido_m = $request->get('apellido_m');
+        $socio->nombre = $request->get('nombre');
+        $socio->cargo = $request->get('cargo');
+        $socio->habilitado = $request->get('habilitado');
+        $socio->descripcion = $request->get('descripcion');        
+        $socio->save();
+        
+        return redirect('/socios')->with('success','Los datos fueron actualizados');
     }
 
     /**
@@ -97,6 +117,9 @@ class SocioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $socio = Socio::find($id);
+        $socio->delete();
+
+        return redirect('/socios')->with('success','El socio ha sido eliminado');
     }
 }
