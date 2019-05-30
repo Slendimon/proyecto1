@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
         <!-- Styles -->
         <style>
             html, body {
@@ -94,34 +94,33 @@
             </div>
         </div>
         <div class="box">
-                <div class="box-header flex-center">
-                        <h3 class="box-title">Listado de Stands + Socios</h3>
-                    </div>
-            <div class="flex-center">
-                    
-                        <table class="box-body">
-                            <thead>
-                                <tr>
-                                <td>Socio</td>
-                                <td>Stand</td>
-                                <td>Fecha de inscripcion</td>
-                                <td>Observacion</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($socios as $socio)
-                                    @foreach ($socio->stands as $stand)
-                                    <tr>
-                                        <td>{{$socio->nombre}}</td>
-                                        <td>{{$stand->letra}}</td>
-                                        <td>{{$stand->pivot->fecha_inscripcion}}</td>
-                                        <td>{{$stand->pivot->observacion}}</td>
-                                                                            
-                                    </tr>
-                                    @endforeach
-                                @endforeach
-                            </tbody>
-                        </table> 
+            <div class="box-header flex-center">
+                <h3 class="box-title">Listado de Stands + Socios</h3>
+            </div>
+            <div class="box-body flex-center">
+                <table class="table table-striped col-md-6">
+                    <thead>
+                        <tr>
+                        <td>Socio</td>
+                        <td>Stand</td>
+                        <td>Fecha de inscripcion</td>
+                        <td>Observacion</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($socios as $socio)
+                            @foreach ($socio->stands as $stand)
+                            <tr>
+                                <td>{{$socio->nombre}}</td>
+                                <td>{{$stand->letra}}</td>
+                                <td>{{$stand->pivot->fecha_inscripcion}}</td>
+                                <td>{{$stand->pivot->observacion}}</td>
+                                                                    
+                            </tr>
+                            @endforeach
+                        @endforeach
+                    </tbody>
+                </table> 
             </div>
             
         </div>
