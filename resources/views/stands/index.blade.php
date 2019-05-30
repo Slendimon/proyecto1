@@ -12,6 +12,11 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
+  <div class="box-header">
+
+      <h3 class="box-title">Listado de Stands</h3>
+      
+    </div>
   <table class="table table-striped">
     <thead>
         <tr>
@@ -41,5 +46,6 @@
         @endforeach
     </tbody>
   </table>
+  <a href="{{ route ('stands.create') }}" class="btn btn-secondary ">Crear Stand</a><br><br>
 <div>
 @endsection

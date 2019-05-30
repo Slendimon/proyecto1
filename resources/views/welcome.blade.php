@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Test</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -86,21 +86,12 @@
 
                 <div class="links">
                     <a href="{{ route('socios.index')}} ">SOCIOS</a>
-                    <a href="" 
-                        data-toggle="modal" 
-                        data-target="#favoritesModal">TARIFAS</a>
-                    <a href="">STANDS</a>
+                    <a href="{{ route('fares.index')}} ">TARIFAS</a>
+                    <a href="{{ route('stands.index') }}">STANDS</a>
                     
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                @yield('tarifa')
-            </div>
-            <div class="col-md-6">
-                @yield('stand')
-            </div>
-        </div>
+ 
     </body>
 </html>

@@ -12,6 +12,11 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
+  <div class="box-header">
+
+      <h3 class="box-title">Listado de Tarifas  </h3>
+      
+    </div>
   <table class="table table-striped">
     <thead>
         <tr>

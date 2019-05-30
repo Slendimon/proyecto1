@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 Route::resource('socios','SocioController');
 Route::resource('fares','FareController');
 Route::resource('stands','StandController');
